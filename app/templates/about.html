@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>About Page</h1>
+<p>Follow me on {{github}} or {{LinkedIn}}</p>
+{% for color in colors %}
+    {% if color == 'red' %}
+    <li>Favorite Color: {{color}}</li>
+    {% elif color == 'yellow' %}
+    <li>Sunshine is: {{color}}</li>
+    {% else %}
+    <li>{{forloop.counter}} - {{color}}</li>
+    {% endif %}
+{% endfor %}
+{% endblock %}
+
