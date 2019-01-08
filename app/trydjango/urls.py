@@ -22,9 +22,9 @@ from products.views import (product_create_view,
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', home_view, name='home'),
-    path('products/<int:id>/', dynamic_lookup_view, name='product'),
-    path('products/', product_list_view, name='product'),
-    path('products/delete/<int:id>/', product_delete, name='product'),
-    path('create/', render_initial_data, name='create'),
+    path('products/<int:id>/', dynamic_lookup_view, name='product-detail'),
+    path('products/', product_list_view, name='product-all'),
+    path('products/delete/<int:id>/', product_delete, name='product-delete'),
+    path('products/create/', render_initial_data, name='product-create'),
     path('about/', about_view, name='about'),
 ]
