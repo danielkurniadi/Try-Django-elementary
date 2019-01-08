@@ -58,6 +58,12 @@ def product_detail_view(request):
     }
     return render(request, 'products/product_detail.html', context)
 
+def product_list_view(request):
+    queryset = Product.objects.all()    # lists of objects
+    context = {
+        "object_lists": queryset
+    } 
+    return render(request, 'products/product_lists.html', context)
 
 def product_delete(request, id):
     obj = get_object_or_404(Product, id=id)
