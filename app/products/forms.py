@@ -44,7 +44,7 @@ class ProductModelForm(forms.ModelForm):
             raise forms.ValidationError("Invalid Title. Title should contain keren ")
         return title
 
-    def clean_email(self, *args, **args):
+    def clean_email(self, *args, **kwargs):
         email = self.cleaned_data.get('email')
         if not '@' in email:
             raise forms.ValidationError("Invalid email address.")
