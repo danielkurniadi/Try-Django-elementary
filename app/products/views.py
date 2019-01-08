@@ -2,7 +2,6 @@ from django.shortcuts import render
 from .models import Product
 from .forms import ProductModelForm, RawProductForm
 
-# Create your views here.
 
 # def product_create_view(request):
 #     if request.method == 'POST':
@@ -33,7 +32,7 @@ def render_initial_data(request):
         'form': form
     }
 
-    return render(request, "products/product_create.html", context)
+    return render(request, 'products/product_create.html', context)
 
 def product_create_view(request):
     form = ProductModelForm(request.POST or None)
@@ -44,6 +43,14 @@ def product_create_view(request):
         'form': form
     }
     return render(request, 'products/product_create.html', context)
+
+
+def dynamic_lookup_view(request, id):
+    obj = Product.objects.get(id=id)
+    context = {
+        "object": obj
+    }
+    return render(request, 'products/product_detail.html', context)
 
 def product_detail_view(request):
     obj = Product.objects.get(id=2)
