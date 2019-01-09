@@ -61,7 +61,7 @@ def product_detail_view(request):
 def product_list_view(request):
     queryset = Product.objects.all()    # lists of objects
     context = {
-        "object_lists": queryset
+        "object_list": queryset
     } 
     return render(request, 'products/product_lists.html', context)
 
