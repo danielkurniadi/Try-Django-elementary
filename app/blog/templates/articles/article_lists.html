@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<ul>{% for object in object_lists %}
+<ul>{% for object in object_list %}
         <li>
-            {{ object.pk}} - {{object.title}}</a> 
+            <p>1.{{ object.pk}} - <a href='{{ object.get_absolute_url }}'>{{object.title}}</a> </p>
             <p>{{ object.content }}</p>
         </li>
     {% endfor %}
